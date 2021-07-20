@@ -31,6 +31,7 @@ void factor(ll tmp, map<int, int> &MAP){
         }
         idx++;
     }
+    if(tmp > 2) MAP[tmp]++;
 }
 
 int main(){
@@ -58,14 +59,15 @@ int main(){
     }
     
     for(auto iter = MAPA.begin();iter != MAPA.end();iter++){
+        ll key = iter->first;
+        tmp = min(iter->second, MAPB[key]);
         //a와 b에서 공통으로 나온 소수의 횟수만큼 곱해준다
-        tmp = min(iter->second, MAPB[iter->first]);
-        answer *= pow(iter->first, tmp);
-        
-        //10e9가 넘었으면 flag설정 후 나머지 저장
-        if(answer >= INF){
-            answer %= INF;
-            flag = true;
+        for(int i = 0;i < tmp;i++){
+            answer *= key;
+            if(answer >= INF){
+                flag = true;
+                answer %= INF;
+            }
         }
     }
     
