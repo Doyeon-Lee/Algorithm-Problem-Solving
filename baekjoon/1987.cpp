@@ -1,6 +1,4 @@
 #include <iostream>
-//#include <set>
-//#include <unordered_map>
 using namespace std;
 
 char MAP[20][20];
@@ -8,8 +6,6 @@ int xmove[] = {0, 0, 1, -1};
 int ymove[] = {1, -1, 0, 0};
 int r, c, answer = 0;
 bool alpha[26] = {false, };
-//set<char> alpha;
-//unordered_map<char, bool> alpha;
 
 bool in_bound(int x, int y){
     return !(x < 0 || x >= r || y < 0 || y >= c);
