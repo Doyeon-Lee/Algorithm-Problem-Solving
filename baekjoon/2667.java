@@ -3,7 +3,7 @@ package second;
 import java.io.*;
 import java.util.*;
 
-public class BJ1667 {
+public class BJ2667 {
 	static int[] dx = {-1, 0, 1, 0}; //위쪽부터 시계방향
 	static int[] dy = {0, 1, 0, -1};
 	static char[][] houseMap;
